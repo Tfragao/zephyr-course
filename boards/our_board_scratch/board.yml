@@ -1,0 +1,6 @@
+board:
+  name: our_board_scratch
+  full_name: Our Custom Nucleo F446RE Board
+  vendor: st
+  socs:
+    - name: stm32f446xx

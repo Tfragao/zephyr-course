@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_OUR_BOARD_SCRATCH
+
+config BOARD
+	default "our_board_scratch"
+
+endif

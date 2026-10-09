@@ -12,6 +12,7 @@ struct our_driver_config {
 
 struct our_driver_data {
     int led_state;
+    int custom_value;
 };
 
 static int our_driver_sample_fetch(const struct device *dev,
@@ -47,7 +48,8 @@ static int our_driver_channel_get(const struct device *dev,
         return -ENOTSUP;
     }
 
-    val->val1 = data->led_state;
+   // val->val1 = data->led_state;
+    val->val1 = data->custom_value;
     val->val2 = 0;
 
     int ret = gpio_pin_set_dt(&cfg->led, 0);
@@ -75,6 +77,15 @@ static int our_driver_init(const struct device *dev)
     }
 
     data->led_state = 0;
+    data->custom_value = 0;
+    return 0;
+}
+
+int our_driver_set_custom_value(const struct device *dev, int value)
+{
+    struct our_driver_data *data = dev->data;
+
+    data->custom_value = value;
 
     return 0;
 }

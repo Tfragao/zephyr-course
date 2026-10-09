@@ -2,6 +2,7 @@
 #include <zephyr/drivers/sensor.h>
 #include <zephyr/kernel.h>
 #include <zephyr/sys/printk.h>
+#include <our_drivers/our_driver.h>
 
 int main(void)
 {
@@ -13,6 +14,14 @@ int main(void)
     }
 
     printk("Our LED sensor driver is ready\n");
+    
+    int ret = our_driver_set_custom_value(dev, 77);
+
+    if (ret < 0) {
+          printk("Failed to set custom value: %d\n", ret);
+	} else {
+    	   printk("Custom driver value set to 42\n");
+        }
 
     while (1) {
         struct sensor_value value;

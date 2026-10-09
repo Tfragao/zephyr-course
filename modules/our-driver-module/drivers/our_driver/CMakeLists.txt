@@ -1,0 +1,5 @@
+if(CONFIG_OUR_DRIVER)
+    zephyr_library()
+    zephyr_library_sources(our_driver.c)
+    zephyr_include_directories(${CMAKE_CURRENT_LIST_DIR}/../../include)
+endif()

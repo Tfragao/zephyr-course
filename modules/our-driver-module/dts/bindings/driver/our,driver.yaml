@@ -1,0 +1,8 @@
+description: Our custom LED sensor driver
+
+compatible: "our,driver"
+
+properties:
+  led-gpios:
+    type: phandle-array
+    required: true

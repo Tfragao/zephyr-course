@@ -7,3 +7,7 @@ deps
 
 # VS Code
 .vscode/
+
+# Twister builds 
+twister-out/
+twister-out.*/ 
